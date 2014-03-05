@@ -16,7 +16,7 @@ end
 
 arrayCliente = Array.new
 
-mutex = Mutex.new
+#mutex = Mutex.new
 
 while arrayCliente.length<20
 	cliente = Cliente.new
@@ -62,13 +62,13 @@ end
 
 s4 = Thread.new do
 	while(!arrayCliente.empty?)
-	mutex.synchronize{
+	#mutex.synchronize{
 	puts "Silla4"
 	ncliente = arrayCliente.shift.cliente_number?
 	puts "Client number #{ncliente}."
 	sleep(rand(8))
 	puts "GOOD BYE Client number #{ncliente}."
-	}
+	#}
 	end
 end
 
